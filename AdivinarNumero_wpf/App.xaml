@@ -1,0 +1,9 @@
+﻿<Application x:Class="AdivinarNumero_wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AdivinarNumero_wpf"
+             StartupUri="AdivinaNumero.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

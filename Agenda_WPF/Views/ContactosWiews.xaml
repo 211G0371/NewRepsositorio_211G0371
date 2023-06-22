@@ -1,0 +1,31 @@
+﻿<RibbonWindow x:Class="Agenda_WPF.Views.ContactosWiews"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Agenda_WPF.Views"
+        mc:Ignorable="d"
+        Title="ContactosWiews" Height="450" Width="800">
+    <DockPanel>
+        <Ribbon Title="Lista de Contactos" DockPanel.Dock="Top">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed"></RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab>
+                <RibbonGroup>
+                <RibbonButton Label="Agregar" SmallImageSource="/Assets/add.png"></RibbonButton>
+                <RibbonButton Label="Editar" LargeImageSource="/Assets/edit.png"></RibbonButton>
+                <RibbonButton Label="Eliminar" LargeImageSource="/Assets/delete.png"></RibbonButton>
+            </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <DataGrid>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Width=".3*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Direccion" Width=".3*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Telefono" Width=".2*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Fecha de Nacimiento" Width=".2*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</RibbonWindow>

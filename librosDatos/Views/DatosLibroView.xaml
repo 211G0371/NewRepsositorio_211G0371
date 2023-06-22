@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="librosDatos.Views.DatosLibroView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:librosDatos.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600" Background="#90AFC5">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="Purple"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
+                <Setter Property="FontWeight" Value="Medium"></Setter>
+                <Setter Property="FontFamily" Value="Comics Sans MS"></Setter>
+                <Setter Property="Margin" Value="40,10,0,0"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            </Style>
+        </StackPanel.Resources>
+        <Image HorizontalAlignment="Center" Height="100" Width="200" Source="{Binding Libro.RutaImagen}"/>
+        <TextBlock  HorizontalAlignment="Center" Margin="0,10,0,0">Titulo:</TextBlock>
+        <TextBlock Foreground="White" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,0" Text="{Binding Libro.Titulo}" Width="300" Background="#336B87"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" >Titulo Original:</TextBlock>
+        <TextBlock Foreground="White" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,0" Text="{Binding Libro.TituloOriginal}" Width="300" Background="#336B87"/>
+        <TextBlock>Autor:</TextBlock>
+        <TextBlock Foreground="White" FontSize="22" Text="{Binding Libro.Autor}" Width="500" Background="#336B87"/>
+        <TextBlock>Genero:</TextBlock>
+        <TextBlock Foreground="White" FontSize="22"  Text="{Binding Libro.Genero}" Width="500" Background="#336B87"/>
+        <TextBlock>Reseña:</TextBlock>
+        <TextBlock Foreground="White" FontSize="14" Height="50" Text="{Binding Libro.Reseña}" Width="500" Background="#336B87"/>
+    </StackPanel>
+</UserControl>

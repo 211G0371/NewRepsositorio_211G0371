@@ -1,0 +1,84 @@
+﻿<Window x:Class="AdivinarNumero_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdivinarNumero_wpf" xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="850" Name="Siu" >
+    <Window.DataContext>
+        <local:CAdivina></local:CAdivina>
+    </Window.DataContext>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="Grid.Column" Value="1"></Setter>
+                <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="Padding" Value="30"></Setter>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Grid.Column" Value="1"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                <Setter Property="Width" Value="200"></Setter>
+                <Setter Property="Height" Value="40"></Setter>
+                <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=Siu,Path=DataContext.JuegoIniciado}" Value="true">
+                        
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="TextAlignment" Value="Center"></Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Image Grid.Column="0" Source="/8a89ee3a07b7be07cf828841c16914a1.jpg" Margin="0,0,10,0">
+
+        </Image>
+
+        <Label>INGRESA TU NUMERO</Label>
+        <Image Grid.Column="1" Height="100" Margin="0,55,0,229" Source="/pngtree-luminous-arrow-hand-drawn-fluorescent-cartoon-neon-arrow-gif-dynamic-diagram-png-image_4403355.png" >
+            
+        </Image>
+        <UniformGrid Grid.Column="1" >
+            <TextBox Text="{Binding final}" Grid.Column="1" Margin="100,140,100,0" VerticalAlignment="Top" ></TextBox>
+        </UniformGrid>
+        <Button Grid.Column="1" Height="30" Width="200" Margin="0,50,0,0">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Content" Value="Iniciar"></Setter>
+                    <Setter Property="Command" Value="{Binding IniciarComando}"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding JuegoIniciado }" Value="true">
+                            <Setter Property="Content" Value="Jugar"></Setter>
+                            <Setter Property="Command" Value="{Binding JugarComando }"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <UniformGrid Height="150" Width="100" Grid.Column="1" VerticalAlignment="Bottom">
+            <StackPanel Height="100" Width="100">
+                <TextBlock FontSize="20">VIDAS</TextBlock>
+                <TextBlock Text="{Binding Oportunidades}" FontSize="20"></TextBlock>
+            </StackPanel>
+        </UniformGrid>
+        <UniformGrid VerticalAlignment="Bottom" Grid.Column="1">
+            <TextBlock Text="{Binding Resultado}" Padding="10" FontSize="20" Foreground="Red"></TextBlock>
+        </UniformGrid>
+    </Grid>
+</Window>
